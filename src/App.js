@@ -5,7 +5,7 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
 import {
-  Ecommerce,
+  ECommerce,
   Orders,
   Calendar,
   Employees,
@@ -27,24 +27,24 @@ import "./App.css";
 import { useStateContext } from "./contexts/ContextProvider";
 
 const App = () => {
-  // const {
-  //   setCurrentColor,
-  //   setCurrentMode,
-  //   currentMode,
-  //   activeMenu,
-  //   currentColor,
-  //   themeSettings,
-  //   setThemeSettings,
-  // } = useStateContext();
+  const {
+    setCurrentColor,
+    setCurrentMode,
+    currentMode,
+    activeMenu,
+    currentColor,
+    themeSettings,
+    setThemeSettings,
+  } = useStateContext();
 
-  // useEffect(() => {
-  //   const currentThemeColor = localStorage.getItem("colorMode");
-  //   const currentThemeMode = localStorage.getItem("themeMode");
-  //   if (currentThemeColor && currentThemeMode) {
-  //     setCurrentColor(currentThemeColor);
-  //     setCurrentMode(currentThemeMode);
-  //   }
-  // }, []);
+  useEffect(() => {
+    const currentThemeColor = localStorage.getItem("colorMode");
+    const currentThemeMode = localStorage.getItem("themeMode");
+    if (currentThemeColor && currentThemeMode) {
+      setCurrentColor(currentThemeColor);
+      setCurrentMode(currentThemeMode);
+    }
+  }, []);
 
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
